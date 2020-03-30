@@ -1,5 +1,6 @@
 package model;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -8,22 +9,22 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(value = "model")
 public class Config {
 
-/*    @Bean
-    Child getChild() {
-        Child child = new Child();
-        child.setMiddle(getMiddle());
-        return child;
-    }
 
     @Bean
-    Middle getMiddle(){
-        Middle middle = new Middle();
-        middle.setParent(getParent());
-        return middle;
-    }
-
-    @Bean
-    Parent getParent() {
+    @Qualifier("Middle")
+    public Parent getMiddleParent() {
         return new Parent();
-    }*/
+    }
+
+
+    @Bean
+    @Qualifier(value = "Child")
+    public Parent getChildParent() {
+        Parent parent = new Parent();
+        parent.setName("Clint");
+        return parent;
+    }
+
+
+
 }
