@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Config {
 
-    @Bean
+/*    @Bean
     Child getChild() {
         Child child = new Child();
         child.setMiddle(getMiddle());
@@ -23,5 +23,5 @@ public class Config {
     @Bean
     Parent getParent() {
         return new Parent();
-    }
+    }*/
 }
